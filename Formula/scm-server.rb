@@ -1,5 +1,5 @@
 class ScmServer < Formula
-  desc "The easiest way to share and manage your Git, Mercurial and Subversion repositories"
+  desc "Share and manage your Git, Mercurial and Subversion repositories"
   homepage "https://scm-manager.org"
   url "https://packages.scm-manager.org/repository/public/sonia/scm/scm-server/2.0.0-rc8/scm-server-2.0.0-rc8-app.tar.gz"
   sha256 "800ed5a282062176c08866cfb58c5c9da37d2781d9041eead3560b4a4268f54a"
