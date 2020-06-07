@@ -7,7 +7,6 @@ class ScmServer < Formula
   depends_on "openjdk@11"
   conflicts_with "scm-manager", :because => "both install the same binaries"
 
-
   def install
     libexec.install Dir["*"]
 
