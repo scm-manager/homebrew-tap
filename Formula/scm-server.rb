@@ -5,7 +5,7 @@ class ScmServer < Formula
   sha256 "2642f77ba800627b1041cf2ad3519a8b4c83eee18a39583b42a7e90080eccad1"
 
   depends_on "openjdk@11"
-  conflicts_with "scm-manager", :because => "both install the same binaries"
+  conflicts_with "scm-manager", because: "both install the same binaries"
 
   def install
     libexec.install Dir["*"]
@@ -20,7 +20,7 @@ class ScmServer < Formula
     chmod 0755, bin/"scm-server"
   end
 
-  plist_options :manual => "scm-server"
+  plist_options manual: "scm-server"
 
   def plist
     <<~EOS
