@@ -97,3 +97,14 @@ void authGit(String credentials, String command) {
         sh "git -c credential.helper=\"!f() { echo username='\$AUTH_USR'; echo password='\$AUTH_PSW'; }; f\" ${command}"
   }
 }
+
+boolean containsReleasePackage(release, packageType) {
+    boolean exists = false
+    for (int i=0; i < release.packages.size(); i++ ) {
+        if (release.packages[i].type == packageType) {
+            exists = true
+            break
+        }
+    }
+    return exists
+}
