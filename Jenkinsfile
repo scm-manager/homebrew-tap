@@ -66,10 +66,10 @@ pipeline {
                             release.packages.add([type: 'osx'])
                             writeYaml file: releaseFile, data: release, overwrite: true
                             sh "git add ${releaseFile}"
-                            commit "Add ces package to release ${params.Version}"
+                            commit "Add osx package to release ${params.Version}"
                             authGit 'cesmarvin-github', 'push origin master'
                         } else {
-                            echo "release ${params.ScmVersion} contains ces package already"
+                            echo "release ${params.ScmVersion} contains osx package already"
                         }
                     }
                 }
