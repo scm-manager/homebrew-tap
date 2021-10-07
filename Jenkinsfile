@@ -45,7 +45,7 @@ pipeline {
             steps {
                 sh 'git add Formula/scm-server.rb'
                 commit "Update scm-server formula to version ${params.Version}"
-                authGit 'cesmarvin-github', 'push origin'
+                authGit 'cesmarvin-github', 'push origin master'
             }
         }
 
