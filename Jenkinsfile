@@ -27,6 +27,7 @@ pipeline {
             agent {
                 docker {
                     image 'groovy:3.0.9-jdk11'
+                    reuseNode true
                 }
             }
             steps {
@@ -41,11 +42,6 @@ pipeline {
                   params.Version.length() > 0
                 }
             }
-            agent {
-                node {
-                    label 'docker'
-                }
-            }
             steps {
                 sh 'git add Formula/scm-server.rb'
                 commit "Update scm-server formula to version ${params.Version}"
@@ -58,11 +54,6 @@ pipeline {
                 branch 'master'
                 expression {
                   params.Version.length() > 0
-                }
-            }
-            agent {
-                node {
-                    label 'docker'
                 }
             }
             steps {
