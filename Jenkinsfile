@@ -19,7 +19,9 @@ pipeline {
         stage('Update formula') {
             when {
                 branch 'master'
-                expression params.Version.length > 0
+                expression {
+                  params.Version.length > 0
+                }
             }
             agent {
                 docker {
@@ -37,7 +39,9 @@ pipeline {
         stage('Docker') {
             when {
                 branch 'master'
-                expression params.Version.length > 0
+                expression {
+                  params.Version.length > 0
+                }
             }
             agent {
                 node {
