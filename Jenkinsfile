@@ -59,7 +59,7 @@ pipeline {
             steps {
                 script {
                     dir('website') {
-                        git branch: 'master', changelog: false, credentialsId: 'cesmarvin', poll: false, url: 'https://github.com/scm-manager/website.git'
+                        git branch: 'master', changelog: false, credentialsId: 'cesmarvin-github', poll: false, url: 'https://github.com/scm-manager/website.git'
                         String releaseFile = "content/releases/${params.Version.replace('.', '-')}.yml"
                         def release = readYaml file: releaseFile
                         if (!containsReleasePackage(release, 'osx')) {
@@ -67,7 +67,7 @@ pipeline {
                             writeYaml file: releaseFile, data: release, overwrite: true
                             sh "git add ${releaseFile}"
                             commit "Add ces package to release ${params.Version}"
-                            authGit 'cesmarvin', 'push origin master'
+                            authGit 'cesmarvin-github', 'push origin master'
                         } else {
                             echo "release ${params.ScmVersion} contains ces package already"
                         }
