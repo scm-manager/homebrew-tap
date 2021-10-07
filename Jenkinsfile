@@ -20,7 +20,7 @@ pipeline {
             when {
                 branch 'master'
                 expression {
-                  params.Version.length > 0
+                  params.Version.length() > 0
                 }
             }
             agent {
@@ -40,7 +40,7 @@ pipeline {
             when {
                 branch 'master'
                 expression {
-                  params.Version.length > 0
+                  params.Version.length() > 0
                 }
             }
             agent {
