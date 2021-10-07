@@ -16,6 +16,7 @@ pipeline {
     }
 
     stages {
+
         stage('Update formula') {
             when {
                 branch 'master'
@@ -30,6 +31,22 @@ pipeline {
             }
             steps {
                 sh "groovy build/update.groovy ${params.Version}"
+            }
+        }
+
+        stage('Update Repository') {
+            when {
+                branch 'master'
+                expression {
+                  params.Version.length() > 0
+                }
+            }
+            agent {
+                node {
+                    label 'docker'
+                }
+            }
+            steps {
                 sh 'git add Formula/scm-server.rb'
                 commit "Update scm-server formula to version ${params.Version}"
                 authGit 'cesmarvin-github', 'push origin'
