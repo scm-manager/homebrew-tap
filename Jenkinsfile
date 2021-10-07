@@ -49,7 +49,7 @@ pipeline {
             }
         }
 
-        stage('Docker') {
+        stage('Update website') {
             when {
                 branch 'master'
                 expression {
