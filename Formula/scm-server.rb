@@ -1,8 +1,8 @@
 class ScmServer < Formula
   desc "Share and manage your Git, Mercurial and Subversion repositories"
   homepage "https://scm-manager.org"
-  url "https://packages.scm-manager.org/repository/releases/sonia/scm/packaging/unix/2.32.0/unix-2.32.0.tar.gz"
-  sha256 "f90b5cb4a7da9bdf48fb882b0d19bfc9da196da64bed822fc869d6f1b20829c3"
+  url "https://packages.scm-manager.org/repository/releases/sonia/scm/packaging/unix/2.32.1/unix-2.32.1.tar.gz"
+  sha256 "da4f3437e69c8b9954d590f6cdd4154a58c62376700cd415a4d3d0862e14ec70"
 
   depends_on "openjdk@11"
   conflicts_with "scm-manager", because: "both install the same binaries"
