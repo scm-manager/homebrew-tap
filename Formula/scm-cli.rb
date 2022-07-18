@@ -5,21 +5,21 @@
 class ScmCli < Formula
   desc "SCM-Manager CLI Client"
   homepage "https://scm-manager.org/cli"
-  version "1.0.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.0/scm-cli_1.0.0_Darwin_arm64.tar.gz"
-      sha256 "6b34076f66411896d254bb8eb0359427d94368b50322d050cf7f0b37cb008747"
+      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.1/scm-cli_1.0.1_Darwin_arm64.tar.gz"
+      sha256 "170e18914c904b2ff8bffc4fbc6705c0ca80593d4e8026196d1f4289708e46df"
 
       def install
         bin.install "scm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.0/scm-cli_1.0.0_Darwin_x86_64.tar.gz"
-      sha256 "d3cde36c28c22a23ea2f7f2356ac8b493ddca2ed4437303adf45480a6a7f7c4e"
+      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.1/scm-cli_1.0.1_Darwin_x86_64.tar.gz"
+      sha256 "82019a4bf2ecb07c55e996944ed61b42f3a7971a947d7a1466bcf76e8df53e7d"
 
       def install
         bin.install "scm"
@@ -28,17 +28,17 @@ class ScmCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.0/scm-cli_1.0.0_Linux_arm64.tar.gz"
-      sha256 "ea637f9076eac1ab7e1aabce854c5554f8ba8ac2742e918194ec3f4425226d75"
+    if Hardware::CPU.intel?
+      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.1/scm-cli_1.0.1_Linux_x86_64.tar.gz"
+      sha256 "a60c52378822c538108b1ca14163182d1e840ce7b150ae0156ebf9ef8284e135"
 
       def install
         bin.install "scm"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.0/scm-cli_1.0.0_Linux_x86_64.tar.gz"
-      sha256 "360a9a848e435b0c7638978c8334a7b14e1f58926d85bee78d97b510cce06563"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.1/scm-cli_1.0.1_Linux_arm64.tar.gz"
+      sha256 "033443f8877132c3ac31d83a7f688f36c581d25933b61792f7cfe7fa7f931d6c"
 
       def install
         bin.install "scm"
