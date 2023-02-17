@@ -17,6 +17,19 @@ pipeline {
 
     stages {
 
+        stage('Prepare master branch') {
+            when {
+                branch 'master'
+                expression {
+                  params.Version.length() > 0
+                }
+            }
+            steps {
+                sh 'git checkout origin/master'
+                sh 'git checkout -B master'
+            }
+        }
+
         stage('Update formula') {
             when {
                 branch 'master'
@@ -45,7 +58,7 @@ pipeline {
             steps {
                 sh 'git add Formula/scm-server.rb'
                 commit "Update scm-server formula to version ${params.Version}"
-                authGit 'cesmarvin-github', 'push origin master'
+                authGit 'SCM-Manager', 'push origin master'
             }
         }
 
