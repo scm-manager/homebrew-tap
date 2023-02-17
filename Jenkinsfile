@@ -72,7 +72,7 @@ pipeline {
             steps {
                 script {
                     dir('website') {
-                        git branch: 'master', changelog: false, credentialsId: 'cesmarvin-github', poll: false, url: 'https://github.com/scm-manager/website.git'
+                        git branch: 'master', changelog: false, credentialsId: 'SCM-Manager', poll: false, url: 'https://ecosystem.cloudogu.com/scm/repo/scm-manager/website'
                         String releaseFile = "content/releases/${params.Version.replace('.', '-')}.yml"
                         def release = readYaml file: releaseFile
                         if (!containsReleasePackage(release, 'osx')) {
@@ -80,7 +80,7 @@ pipeline {
                             writeYaml file: releaseFile, data: release, overwrite: true
                             sh "git add ${releaseFile}"
                             commit "Add osx package to release ${params.Version}"
-                            authGit 'cesmarvin-github', 'push origin master'
+                            authGit 'SCM-Manager', 'push origin master'
                         } else {
                             echo "release ${params.ScmVersion} contains osx package already"
                         }
