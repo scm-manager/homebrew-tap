@@ -88,6 +88,17 @@ pipeline {
                 }
             }
         }
+
+        stage('Update GitHub') {
+            when {
+                branch 'master'
+            }
+            steps {
+                script {
+                    authGit 'cesmarvin', "push https://github.com/scm-manager/homebrew-tap.git master"
+                }
+            }
+        }
     }
 
     post {
