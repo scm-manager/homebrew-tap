@@ -92,6 +92,9 @@ pipeline {
         stage('Update GitHub') {
             when {
                 branch 'master'
+                expression {
+                  params.Version.length() > 0
+                }
             }
             steps {
                 script {
