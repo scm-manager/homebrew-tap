@@ -5,21 +5,21 @@
 class ScmCli < Formula
   desc "SCM-Manager CLI Client"
   homepage "https://scm-manager.org/cli"
-  version "1.0.2"
+  version "1.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.2/scm-cli_1.0.2_Darwin_arm64.tar.gz"
-      sha256 "0493183f78520b7d91ba9a45c212e1b0fd4751a4ec9b0802bb18f37e9aed669b"
+      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.3/scm-cli_1.0.3_Darwin_arm64.tar.gz"
+      sha256 "fcb04b2591379221d9cd9d2fa13da3f8c5ffab02b2c3ebc7a0965b8b64567e4c"
 
       def install
         bin.install "scm"
       end
     end
     if Hardware::CPU.intel?
-      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.2/scm-cli_1.0.2_Darwin_x86_64.tar.gz"
-      sha256 "9ea066b87609a3de9bb69618a220bcebc9025e8bbf6582483a0299c1184c0f47"
+      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.3/scm-cli_1.0.3_Darwin_x86_64.tar.gz"
+      sha256 "982c2651a1abac08280b6b8f51ecdd0c4fdb1d931e223ca9b48f8d38a24b7729"
 
       def install
         bin.install "scm"
@@ -29,16 +29,16 @@ class ScmCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.2/scm-cli_1.0.2_Linux_x86_64.tar.gz"
-      sha256 "f6cac1cae52f3f51016550f279445b1b36584071558aca6cf2308229ce5f9071"
+      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.3/scm-cli_1.0.3_Linux_x86_64.tar.gz"
+      sha256 "eb09cc68b179b855567b110615fcdc8eac9ddfb3e42dd60000b749dfe7bae4b5"
 
       def install
         bin.install "scm"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.2/scm-cli_1.0.2_Linux_arm64.tar.gz"
-      sha256 "6647800abf2c887d7581f53d7ce60bfb373fb36bfec1abbde3921199f42cd173"
+      url "https://packages.scm-manager.org/repository/scm-cli-releases/1.0.3/scm-cli_1.0.3_Linux_arm64.tar.gz"
+      sha256 "d51ef102ae4fd97f84cd7aaa6f3b904ed6577c49290219aff8d2f09933c2ada9"
 
       def install
         bin.install "scm"
