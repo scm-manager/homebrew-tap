@@ -6,7 +6,7 @@ class ScmCli < Formula
   desc "SCM-Manager CLI Client"
   homepage "https://scm-manager.org/cli"
   version "1.0.3"
-  license "MIT"
+  license "AGPL-3.0-only"
 
   on_macos do
     if Hardware::CPU.arm?
